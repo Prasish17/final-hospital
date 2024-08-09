@@ -1,0 +1,44 @@
+{% extends "hospital/base.html" %}
+{% block title %}View Appointments{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">List of Appointments</h2>
+    
+    <table id="hospital" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Appointment Id</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Patient Id</th>
+                <th>Patient Name</th>
+                <th>Service Id</th>
+                <th>Doctor Id</th>
+                <th>Doctor Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.0 }}</td>
+                <td>{{ appointment.1 }}</td>
+                <td>{{ appointment.2 }}</td>
+                <td>{{ appointment.3 }}</td>
+                <td>{{ appointment.4 }}</td>
+                <td>{{ appointment.5 }}</td>
+                <td>{{ appointment.6 }}</td>
+                <td>{{ appointment.7 }}</td>
+                <td>
+                    <a href="{% url 'update_appointment' appointment.0 %}">Edit</a>
+                    <a href="{% url 'delete_appointment' appointment.0 %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'make_appointment' %}">Add Appointment</a>
+</body>
+{% endblock %}
+
