@@ -22,6 +22,9 @@ This is a Hospital Management System built with Django for the backend and Postg
 - **CSS:** For styling the web pages.
 - **JavaScript:** For interactivity and dynamic content on the client-side.
 
+### Deployment
+- **Render:** Cloud platform used for deploying the application.
+
 ## Setup Instructions
 
 ### Prerequisites:
